@@ -1,5 +1,50 @@
 {% extends 'layout.twig' %}
 
 {% block content %}
-cv
+<h2>Lebenslauf</h2>
+
+<h3>Persönliche Daten</h3>
+{% for private in application.privates %}
+    <div class="row">
+        <div class="col-md-5">{{ private[0] }}</div>
+        <div class="col-md-7">{{ private[1] }}</div>
+    </div>
+{% endfor %}
+
+<h3>Schulischer Werdegang</h3>
+{% for school in application.school %}
+    <div class="row">
+        <div class="col-md-5">{{ school[0] }}</div>
+        <div class="col-md-7">{{ school[1]|raw }}</div>
+    </div>
+{% endfor %}
+
+<h3>Berufliche Ausbildung</h3>
+{% for professionaleducation in application.professionaleducation %}
+    <div class="row">
+        <div class="col-md-5"> {{ professionaleducation[0] }}</div>
+        <div class="col-md-7"> {{ professionaleducation[1] }}</div>
+    </div>
+{% endfor %}
+
+<h3>Beruflicher Werdegang</h3>
+{% for professionalcareer in application.professionalcareer %}
+    <div class="row">
+        <div class="col-md-5"> {{ professionalcareer[0] }}</div>
+        <div class="col-md-7"> {{ professionalcareer[1] }}</div>
+    </div>
+{% endfor %}
+
+<h3>Kenntnisse / Interessen / zusätzliche Qualifikationen</h3>
+{% for knowledge in application.knowledges %}
+<h4>{{ knowledge[0] }}</h4>
+<p>{{ knowledge[1] }}</p>
+{% endfor %}
+
+
 {% endblock %}
+
+
+
+
+
