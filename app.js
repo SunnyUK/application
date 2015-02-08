@@ -39,7 +39,7 @@ var config = {
         },
         directory: {
             app: {},
-            homepage: {}
+            application: { application: require(__dirname + '/data/application.json') }
         }
     }
 };
