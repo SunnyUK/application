@@ -6,11 +6,48 @@
     <title>{% block title %}{% endblock %}{{ language.title }}</title>
     <meta name="description" content="{% block description %}{% endblock %}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/{{ bower.bootstrap }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/jumpotron-narrow.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     {% block css %}{% endblock %}
 </head>
 <body>
-{% block content %}{% endblock %}
+
+<div class="container">
+    <div class="header">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation"{% if active == '/' %} class="active"{% endif %}><a href="/">Startseite</a></li>
+                <li role="presentation"{% if active == '/writeto' %} class="active"{% endif %}><a href="/writeto">Anschreiben</a></li>
+                <li role="presentation"{% if active == '/cv' %} class="active"{% endif %}><a href="/cv">Lebenslauf</a></li>
+                <li role="presentation"{% if active == '/attachements' %} class="active"{% endif %}><a href="/attachements">Anlagen</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Bewerbung</h3>
+    </div>
+    {% block content %}{% endblock %}
+    <footer class="footer">
+        <p><a href="#" data-toggle="modal" data-target="#imprintModal">Impressum</a></p>
+    </footer>
+</div>
+<div class="modal fade" id="imprintModal" tabindex="-1" role="dialog" aria-labelledby="imprintLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Schliessen"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="imprintLabel">Impressum</h4>
+            </div>
+            <div class="modal-body">
+                <address>
+                    Vorname Nachname<br>
+                    <a href="mailto:example@example.com">example@example.com</a>
+                </address>
+            </div>
+            <div class="modal-footer">
+                &copy; <a href="http://example.com" target="_blank">Copyright</a> 2015
+            </div>
+        </div>
+    </div>
+</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/{{ bower.jquery }}/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/{{ bower.bootstrap }}/js/bootstrap.min.js"></script>
 <script src="/js/app.js"></script>
