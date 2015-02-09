@@ -3,13 +3,14 @@
 
 // Load the libraries and modules
 
+var env = require('./env.json');
 var config = {
     directory: __dirname + '/modules/',
     modules: {
         npm: {
             'dragonnodejs-webserver': {
                 app: {
-                    port: process.env.PORT,
+                    port: process.env.PORT || env.PORT,
                     package: __dirname + '/package.json',
                     static: __dirname + '/web/'
                 },
