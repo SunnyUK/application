@@ -18,3 +18,13 @@ header {
 h3.text-muted {
     color: #ffffff;
 }
+.modal-dialog {
+    color: #000000;
+}
+.modal-dialog a {
+    color: #009fb5;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    background-color: #000000;
+    color: #fff;
+}
